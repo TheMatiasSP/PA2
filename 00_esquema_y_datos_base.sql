@@ -1,6 +1,4 @@
-/* NovaMarket PA2 — SQL Server 2017+.
-   ATENCIÓN: reinicializa solamente las tablas del proyecto NovaMarket_PA2_ISIL.
-   Ejecutar una sola vez al comenzar (si se repite, se reinician los datos). */
+
 IF DB_ID(N'NovaMarket_PA2_ISIL') IS NULL
     EXEC(N'CREATE DATABASE NovaMarket_PA2_ISIL');
 GO
