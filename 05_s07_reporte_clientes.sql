@@ -18,11 +18,7 @@ WHERE c.Activo=1
 GROUP BY c.ClienteID,c.Nombre
 ORDER BY c.ClienteID;
 GO
--- C: matriz ejecutable. Esperado vs obtenido para 4 casos controlados.
--- Cliente 4 = 1 pedido de 3 líneas (240+150+25=415).
--- Cliente 3 = solo pendiente, sin ventas válidas.
--- Cliente 5 = solo pendiente, sin ventas válidas.
--- Cliente 6 = pedidos anulados, sin ventas válidas.
+
 ;WITH MontoPorPedido AS (
  SELECT PedidoID,SUM(CAST(Cantidad AS DECIMAL(18,2))*PrecioUnitario) Monto
  FROM dbo.DetallePedido GROUP BY PedidoID
